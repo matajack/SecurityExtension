@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Promised LAN",
+  "description": "Website security",
+  "version": "1.0.0",
+  "icons": { "128": "images/icon_128.png" },
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
+}
